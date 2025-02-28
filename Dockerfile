@@ -57,7 +57,7 @@ RUN getent group www-data ||  addgroup -g 33 www-data && \
 
 # 更新为国内镜像
 RUN sed -i 's#https\?://dl-cdn.alpinelinux.org/alpine#https://mirrors.tuna.tsinghua.edu.cn/alpine#g' /etc/apk/repositories && \
-        apk update && apk add --no-cache curl perl ca-certificates
+        apk update && apk add --no-cache curl perl ca-certificates pcre libstdc++
 
 RUN opm install ledgetech/lua-resty-http
 
